@@ -18,6 +18,7 @@
 
 #include <libexplain/ac/errno.h>
 #include <libexplain/ac/fcntl.h>
+#include <libexplain/ac/time.h>
 
 #include <libexplain/buffer/does_not_have_inode_modify_permission.h>
 #include <libexplain/buffer/ebadf.h>

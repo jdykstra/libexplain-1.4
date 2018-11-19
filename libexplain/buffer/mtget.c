@@ -23,6 +23,7 @@
 #include <libexplain/buffer/pointer.h>
 #include <libexplain/is_efault.h>
 
+#ifdef MTIOCGET
 
 void
 explain_buffer_mtget(explain_string_buffer_t *sb,
@@ -52,5 +53,6 @@ explain_buffer_mtget(explain_string_buffer_t *sb,
     }
 }
 
+#endif 
 
 /* vim: set ts=8 sw=4 et : */

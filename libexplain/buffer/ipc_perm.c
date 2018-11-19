@@ -101,7 +101,7 @@ explain_buffer_ipc_perm(explain_string_buffer_t *sb,
         explain_buffer_int(sb, data->__key);
 #else
         explain_string_buffer_puts(sb, "key = ");
-        explain_buffer_int(sb, data->key);
+        explain_buffer_int(sb, data->_key);
 #endif
         explain_string_buffer_puts(sb, ", ");
     }
@@ -125,7 +125,7 @@ explain_buffer_ipc_perm(explain_string_buffer_t *sb,
         explain_buffer_ushort(sb, data->__seq);
 #else
         explain_string_buffer_puts(sb, ", seq = ");
-        explain_buffer_ushort(sb, data->seq);
+        explain_buffer_ushort(sb, data->_seq);
 #endif
     }
     explain_string_buffer_puts(sb, " }");

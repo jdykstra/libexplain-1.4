@@ -19,6 +19,7 @@
 #include <libexplain/ac/errno.h>
 #include <libexplain/ac/netinet/in.h>
 #include <libexplain/ac/sys/socket.h>
+#include <libexplain/ac/time.h>
 
 #include <libexplain/buffer/char_data.h>
 #include <libexplain/buffer/ebadf.h>

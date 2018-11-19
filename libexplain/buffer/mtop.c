@@ -24,6 +24,7 @@
 #include <libexplain/is_efault.h>
 #include <libexplain/sizeof.h>
 
+#ifdef MTIOCGET
 
 static void
 explain_buffer_mtop_op(explain_string_buffer_t *sb, int data)
@@ -201,5 +202,6 @@ explain_buffer_mtop(explain_string_buffer_t *sb,
     }
 }
 
+#endif 
 
 /* vim: set ts=8 sw=4 et : */

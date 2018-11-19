@@ -18,6 +18,7 @@
 
 #include <libexplain/ac/errno.h>
 #include <libexplain/ac/limits.h>
+#include <libexplain/ac/time.h>
 
 #include <libexplain/buffer/efault.h>
 #include <libexplain/buffer/einval.h>

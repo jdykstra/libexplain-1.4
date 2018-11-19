@@ -164,6 +164,8 @@ looks_like_permissions(const char *text)
 {
     acl_perm_t perms = 0;
     const char *cp = text;
+
+    /*  Hacked for MacOS. */
     for (;;)
     {
         unsigned char c = *cp++;
@@ -188,14 +190,14 @@ looks_like_permissions(const char *text)
         case 'r':
             if ((cp - text) != 1)
                 yyerrorf("the read permission must be first (%s)", text);
-            perms |= ACL_READ;
+            perms |= ACL_READ_DATA;
             break;
 
         case 'W':
         case 'w':
             if ((cp - text) != 2)
                 yyerrorf("the write permission must be second (%s)", text);
-            perms |= ACL_WRITE;
+            perms |= ACL_WRITE_DATA;
             break;
 
         case 'X':
@@ -229,26 +231,7 @@ looks_like_permissions(const char *text)
 static int
 check_for_keywords(const char *text)
 {
-    if (!strcmp(text, "u") || !strcmp(text, "user"))
-    {
-        yylval.lv_tag = ACL_USER;
-        return USER;
-    }
-    if (!strcmp(text, "g") || !strcmp(text, "group"))
-    {
-        yylval.lv_tag = ACL_GROUP;
-        return GROUP;
-    }
-    if (!strcmp(text, "o") || !strcmp(text, "other"))
-    {
-        yylval.lv_tag = ACL_OTHER;
-        return OTHER;
-    }
-    if (!strcmp(text, "m") || !strcmp(text, "mask"))
-    {
-        yylval.lv_tag = ACL_MASK;
-        return MASK;
-    }
+    /*  Hacked for MacOS. */
     return 0;
 }
 
