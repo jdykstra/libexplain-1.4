@@ -23,12 +23,11 @@
 #include <libexplain/buffer/shminfo.h>
 #include <libexplain/is_efault.h>
 
-
+#if 0
 void
 explain_buffer_shminfo(explain_string_buffer_t *sb,
     const struct shminfo *data)
 {
-#ifdef HAVE_SYS_SHM_H
     if (explain_is_efault_pointer(data, sizeof(*data)))
     {
         explain_buffer_pointer(sb, data);
@@ -46,10 +45,8 @@ explain_buffer_shminfo(explain_string_buffer_t *sb,
     explain_string_buffer_puts(sb, ", shmall = ");
     explain_buffer_ulong(sb, data->shmall);
     explain_string_buffer_puts(sb, " }");
-#else
-    explain_buffer_pointer(sb, data);
-#endif
 }
+#endif
 
 
 /* vim: set ts=8 sw=4 et : */
